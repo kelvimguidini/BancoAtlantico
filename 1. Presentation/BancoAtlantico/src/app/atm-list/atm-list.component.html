@@ -1,0 +1,27 @@
+
+<p *ngIf="message != null" class="{{message.class}}">{{message.description}}</p>
+
+<div class="row space-top15" *ngFor="let atm of atmService.atms">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        {{atm.name}}
+      </div>
+      <div class="card-body">
+        <ol class="list-group list-group-item" *ngFor="let bankNote of atm.atmBankNotes">
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Estoque de notas de R$ {{bankNote.bankNote}},00</div>
+              <p *ngIf="bankNote.count <= 5" class="bg-warning">estoque abaixo do recomendado, favor repor notas</p>
+            </div>
+            <span class="badge rounded-pill" [ngClass]="{'bg-primary':bankNote.count > 5, 'bg-danger':bankNote.count <= 5}">{{bankNote.count}}</span>
+          </li>
+        </ol>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-danger" (click)="tornOff(atm)">Desligar caixa eletrônico</button>
+      </div>
+    </div>
+  </div>
+</div>

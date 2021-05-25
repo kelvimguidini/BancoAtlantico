@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="KissLog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.0" />
+    <PackageReference Include="System.Security.Permissions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Atlantico.CrossCutting\Atlantico.CrossCutting.csproj" />
+    <ProjectReference Include="..\Atlantico.Domain\Atlantico.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
