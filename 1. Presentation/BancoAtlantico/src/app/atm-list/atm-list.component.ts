@@ -43,7 +43,8 @@ export class AtmListComponent implements OnInit {
         .subscribe((sucess: boolean) => {
           if (sucess) {
             
-            this.message = { description: 'Desligado com sucesso.', class: "bg-success" }
+            this.message = { description: 'Desligado com sucesso.', class: "bg-success" };
+            this.getListATMs();
           } else {
             this.message = { description: 'Falha ao desligar caixa eletrônico solicitação.', class: "bg-danger" }
           }
